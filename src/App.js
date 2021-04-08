@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider } from '@material-ui/core/styles';
+import { theme } from './shared/theme'
+import AppRouter from './router/Router';
+// import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+
+
+// import 'fontsource-roboto';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="App">
+      <ThemeProvider theme={theme}>
+        <AppRouter/>  
+      </ThemeProvider>
     </div>
   );
 }
